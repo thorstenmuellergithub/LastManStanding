@@ -8,70 +8,84 @@
 <body>
 
     <div id="content">
+        <div id="headline">
+            <b>
+                <span>C</span>reate <span>P</span>layer
+            </b>
+        </div>
         <div id="formularContainer">
             <form id="formular" action="http://martinakraus.net/createPlayer.php" method="get">
-                <ul>
-                    <li>
-                        <label for="vorname"> Vorname
-                            <input type="text" name="vorname" id="vorname" placeholder="Vorname" />
-                        </label>
-                    </li>
-                    <li>
-                        <label for="nachname"> Nachname
-                            <input type="text" name="nachname" id="nachname" placeholder="Nachname" />
-                        </label>
-                    </li>
-                    <li>
-                        <label for="verein"> Verein
-                            <input type="text" name="verein" id="verein" placeholder="Verein" />
-                        </label>
-                    </li>
-                    <li>
-                        <label for="hcoach"> Headcoach
-                            <input type="text" name="hcoach" id="hcoach" placeholder="Headcoach" />
-                        </label>
-                    </li>
-                    <li>
-                        <label for="acoach"> Assitent Coach
-                            <input type="text" name="acoach" id="acoach" placeholder="Assistent Coach" />
-                        </label>
-                    </li>
-                    <li>
-                        <label for="aktiv"> Aktiv
-                            <input type="radio" name="aktiv" value="ja" id="aktiv" />
-                        </label>
-                        <label for="nichtaktiv"> Nicht Aktiv
-                            <input type="radio" name="aktiv" value="nein" id="nichtaktiv" checked />
-                        </label>
-                    </li>
-                    <li>
-                        <label for="position"> Position
-                            <select name="position" id="position">
-                                <option value="Center"> 5 - Center </option>
-                                <option value="Power Forward"> 4 - Power Forward </option>
-                                <option value="Small Forward"> 3 - Small Forward </option>
-                                <option value="Wing" selected> 2 - Shooting Guard </option>
-                                <option value="Guard"> 1 - Point Guard </option>
-                            </select>
-                        </label>
-
-                    </li>
-                    <li>
-                        <label for="number"> Number
-                            <input type="number" name="number" id="number" placeholder="XX" />
-                        </label>
-                    </li>
-                    <li>
-                        <label for="jahr"> Geburtsjahr
-                            <input type="number" name="jahr" id="jahr" placeholder="YYYY" />
-                        </label>
-                    </li>
-                    <li>
-                        <label for="favorit"> Favorit markieren
-                            <input type="checkbox" name="favorit" id="favorit" />
-                        </label>
-                    </li>
-                </ul>
+                //TODO Aktiv / Nicht aktiv Stylen per ID
+                //TODO Input größe
+                //TODO Überschrift
+                //TODO Favorit
+                <label for="vorname">
+                    <b class="createPlayer">
+                        <b> Vorname </b>
+                        <input type="text" name="vorname" id="vorname" placeholder="Vorname" class="input"/>
+                    </b>
+                </label>
+                <label for="nachname">
+                    <b class="createPlayer">
+                        <b> Nachname </b>
+                        <input type="text" name="nachname" id="nachname" placeholder="Nachname" class="input" />
+                    </b>
+                </label>
+                <label for="verein">
+                    <b class="createPlayer"> Verein
+                        <input type="text" name="verein" id="verein" placeholder="Verein" class="input" />
+                    </b>
+                </label>
+                <label for="hcoach">
+                    <b class="createPlayer">
+                        <b> Headcoach </b>
+                        <input type="text" name="hcoach" id="hcoach" placeholder="Headcoach" class="input" />
+                    </b>
+                </label>
+                <label for="acoach">
+                    <b class="createPlayer">
+                        <b> Assitent Coach </b>
+                        <input type="text" name="acoach" id="acoach" placeholder="Assistent Coach" class="input" />
+                    </b>
+                </label>
+                <label for="aktiv">
+                    <b class="createPlayer">
+                        <b> Aktiv </b>
+                        <input type="radio" name="aktiv" value="ja" id="aktiv" class="input" />
+                        <b> Nicht Aktiv </b>
+                        <input type="radio" name="aktiv" value="nein" id="nichtaktiv" class="input" checked />
+                    </b>
+                </label>
+                <label for="position">
+                    <b class="createPlayer">
+                        <b> Position </b>
+                        <select name="position" id="position" class="input">
+                            <option value="Center"> 5 - Center </option>
+                            <option value="Power Forward"> 4 - Power Forward </option>
+                            <option value="Small Forward"> 3 - Small Forward </option>
+                            <option value="Wing" selected> 2 - Shooting Guard </option>
+                            <option value="Guard"> 1 - Point Guard </option>
+                        </select>
+                    </b>
+                </label>
+                <label for="number">
+                    <b class="createPlayer">
+                        <b> Number </b>
+                        <input type="number" name="number" id="number" placeholder="XX" class="input" />
+                    </b>
+                </label>
+                <label for="jahr">
+                    <b class="createPlayer">
+                        <b> Geburtsjahr </b>
+                        <input type="number" name="jahr" id="jahr" placeholder="YYYY" class="input" />
+                    </b>
+                </label>
+                <label for="favorit">
+                    <b class="createPlayer">
+                        <b> Favorit markieren </b>
+                        <input type="checkbox" name="favorit" id="favorit" class="input" />
+                    </b>
+                </label>
 
                 <input type="submit" value="Absenden" />
             </form>

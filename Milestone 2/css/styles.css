@@ -51,3 +51,59 @@ a{
     text-decoration: none;
     color: black;
 }
+
+/* Formular */
+form#formular{
+    max-width: 35%;
+    margin-left: 10%;
+    margin-right: 50%;
+
+}
+.createPlayer{
+    width:100%;
+    display:block;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 16px;
+    color: black;
+
+}
+.description{
+    width: 30%;
+    max-width: 30%;
+}
+.input{
+    float: right;
+    margin-left: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
