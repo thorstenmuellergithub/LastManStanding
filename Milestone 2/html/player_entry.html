@@ -8,17 +8,14 @@
 <body>
 
     <div id="content">
-        <div id="headline">
+        <div class="headline" id="headlinetoCreatePlayer">
             <b>
-                <span>C</span>reate <span>P</span>layer
+                Create Player
             </b>
         </div>
         <div id="formularContainer">
             <form id="formular" action="http://martinakraus.net/createPlayer.php" method="get">
-                //TODO Aktiv / Nicht aktiv Stylen per ID
-                //TODO Input größe
-                //TODO Überschrift
-                //TODO Favorit
+                //TODO Input fields stylen
                 <label for="vorname">
                     <b class="createPlayer">
                         <b> Vorname </b>
@@ -51,9 +48,13 @@
                 <label for="aktiv">
                     <b class="createPlayer">
                         <b> Aktiv </b>
-                        <input type="radio" name="aktiv" value="ja" id="aktiv" class="input" />
-                        <b> Nicht Aktiv </b>
-                        <input type="radio" name="aktiv" value="nein" id="nichtaktiv" class="input" checked />
+                        <b class="input">
+                            <input type="radio" name="aktiv" value="ja" id="aktiv"  />
+                            <b id="isaktiv"> Ja </b>
+                            <input type="radio" name="aktiv" value="nein" id="nichtaktiv" checked />
+                            <b id="isnotaktiv"> Nein </b>
+                        </b>
+
                     </b>
                 </label>
                 <label for="position">
@@ -81,9 +82,9 @@
                     </b>
                 </label>
                 <label for="favorit">
-                    <b class="createPlayer">
-                        <b> Favorit markieren </b>
-                        <input type="checkbox" name="favorit" id="favorit" class="input" />
+                    <b class="createPlayer" id="favoritfield">
+                        <b> Als Favorit markieren </b>
+                        <input type="checkbox" name="favorit" id="favorit" />
                     </b>
                 </label>
 
