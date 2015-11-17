@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" >
+    <script src="../js/CheckInput.js"> </script>
 </head>
 <body>
 
@@ -14,7 +15,7 @@
             </b>
         </div>
         <div id="formularContainer">
-            <form id="formular" action="http://martinakraus.net/createPlayer.php" method="get">
+            <form id="formular" name="formular" action="http://martinakraus.net/createPlayer.php" method="get" onsubmit="return getData ()">
                 <label for="name">
                     <b class="createPlayer">
                         <b> Name </b>
@@ -48,22 +49,22 @@
                 <label for="number">
                     <b class="createPlayer">
                         <b> Trikotnummer </b>
-                        <input type="number" name="number" id="number" placeholder="XX" class="input" />
+                        <input type="text" name="number" id="number" placeholder="XX" class="input" />
                     </b>
                 </label>
                 <label for="jahr">
                     <b class="createPlayer">
                         <b> Jahrgang </b>
-                        <input type="number" name="jahr" id="jahr" placeholder="YYYY" class="input" />
+                        <input type="text" name="jahr" id="jahr" placeholder="YYYY" class="input" />
                     </b>
                 </label>
                 <label for="aktiv">
                     <b class="createPlayer">
                         <b> Aktiv </b>
                         <b class="input">
-                            <input type="checkbox" name="aktiv" value="ja" id="aktiv"  />
+                            <input type="radio" name="aktiv" value="aktiv" id="aktiv"  />
                             <b id="isaktiv"> Ja </b>
-                            <input type="checkbox" name="aktiv" value="nein" id="nichtaktiv" checked />
+                            <input type="radio" name="aktiv" value="nichtaktiv" id="nichtaktiv" checked />
                             <b id="isnotaktiv"> Nein </b>
                         </b>
 
