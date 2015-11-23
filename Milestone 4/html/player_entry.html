@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WAW WS2015/16</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" >
+    <script src="../js/CheckInput.js"> </script>
+</head>
+<body>
+
+    <div id="content">
+        <div id="Navigator">
+            <div id="colum">
+                <a href="index.html">
+                    <div class="options">
+                        <b> Home </b>
+                    </div>
+                </a>
+                <a href="player_entry.html">
+                    <div class="options">
+                        <b> Create Player </b>
+                    </div>
+                </a>
+                <a href="player_detail.html">
+                    <div class="options">
+                        <b> Favorites </b>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="options">
+                        <b> Register</b>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="headline" id="HeadlineForCreatePlayer">
+            <b>Create Player</b>
+        </div>
+
+        <div id="formularContainer">
+            <form id="formular" name="formular" action="http://martinakraus.net/createPlayer.php" method="get" >
+                <label for="name">
+                    <div class="createPlayer">
+                        <b>Name</b>
+                        <input type="text" name="name" id="name" placeholder="Name" class="input" />
+                    </div>
+                </label>
+                <label for="vorname">
+                    <div class="createPlayer">
+                        <b>Vorname</b>
+                        <input type="text" name="vorname" id="vorname" placeholder="Vorname" class="input"/>
+                    </div>
+                </label>
+                <label for="verein">
+                    <div class="createPlayer">
+                        <b>Verein</b>
+                        <input type="text" name="verein" id="verein" placeholder="Verein" class="input" />
+                    </div>
+                </label>
+                <label for="hcoach">
+                    <div class="createPlayer">
+                        <b>Headcoach</b>
+                        <input type="text" name="hcoach" id="hcoach" placeholder="Headcoach" class="input" />
+                    </div>
+                </label>
+                <label for="acoach">
+                    <div class="createPlayer">
+                        <b>Assitent Coach</b>
+                        <input type="text" name="acoach" id="acoach" placeholder="Assistent Coach" class="input" />
+                    </div>
+                </label>
+                <label for="number">
+                    <div class="createPlayer">
+                        <b>Trikotnummer</b>
+                        <input type="text" name="number" id="number" placeholder="XX" class="input" />
+                    </div>
+                </label>
+                <label for="jahr">
+                    <div class="createPlayer">
+                        <b>Jahrgang</b>
+                        <input type="text" name="jahr" id="jahr" placeholder="YYYY" class="input" />
+                    </div>
+                </label>
+                <label for="aktiv">
+                    <div class="createPlayer">
+                        <b>Aktiv</b>
+                        <div class="input">
+                            <input type="checkbox" name="aktiv" value="aktiv" id="aktiv"  />
+                            <b id="isaktiv">Ja</b>
+                            <input type="checkbox" name="aktiv" value="nichtaktiv" id="nichtaktiv" checked />
+                            <b id="isnotaktiv">Nein</b>
+                        </div>
+
+                    </div>
+                </label>
+                <label for="position">
+                    <div class="createPlayer">
+                        <b>Position</b>
+                        <select name="position" id="position" class="input">
+                            <option value="Center"> 5 - Center </option>
+                            <option value="Power Forward"> 4 - Power Forward </option>
+                            <option value="Small Forward"> 3 - Small Forward </option>
+                            <option value="Wing" selected> 2 - Shooting Guard </option>
+                            <option value="Guard"> 1 - Point Guard </option>
+                        </select>
+                    </div>
+                </label>
+                <label for="favorit">
+                    <div class="createPlayer" id="favoritfield">
+                        <b>Als Favorit markieren</b>
+                        <input type="checkbox" name="favorit" id="favorit" />
+                    </div>
+                </label>
+                <input type="submit" value="Absenden" id="button" />
+            </form>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
