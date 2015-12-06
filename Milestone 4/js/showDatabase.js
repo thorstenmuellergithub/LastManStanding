@@ -14,7 +14,7 @@ var players;
 
 
 function getData() {
-    request.open("GET", "../js/data.json", true); //true damit der aufruf asynchron bleibt
+    request.open("GET", "../js/data.json");
     request.onreadystatechange = callbackHandler;
     request.send();
 }
