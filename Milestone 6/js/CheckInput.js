@@ -12,40 +12,8 @@ function init(){
 
 }
 
-/* Konstruktor
-function player(nachname, vorname, verein, headcoach, assistentcoach, number, jahr, aktiv, nichtaktiv, position, favorit){
-    this.nachname=nachname;
-    this.vorname=vorname;
-    this.verein=verein;
-    this.headcoach=headcoach;
-    this.assistentcoach=assistentcoach;
-    this.number=number;
-    this.jahr=jahr;
-    this.aktiv=aktiv;
-    this.nichtaktiv=nichtaktiv;
-    this.position=position;
-    this.favorit=favorit;
-
-}
-*/
-
 //====================Check Entries=======================================================
 function getData (){
-    /* Konstruktoraufruf
-    var checkData = new player(
-        document.getElementById("name").value,
-        document.getElementById("vorname").value,
-        document.getElementById("verein").value,
-        document.getElementById("hcoach").value,
-        document.getElementById("acoach").value,
-        document.getElementById("number").value,
-        document.getElementById("jahr").value,
-        document.getElementById("aktiv").value,
-        document.getElementById("nichtaktiv").value,
-        document.getElementById("position").value,
-        document.getElementById("favorit").value
-    )
-    */
 
 
     var checkData={
@@ -61,13 +29,32 @@ function getData (){
         position:       document.getElementById("position").value,
         favorit:        document.getElementById("favorit").value
     };
+    checkData = JSON.stringify(checkData);
     var wrongEntries=[];
 
-    checkYear(checkData, wrongEntries);
-    checkNumber(checkData, wrongEntries);
-    checkString(checkData, wrongEntries);
-    return (checkForWrongEntries(wrongEntries));
+    //checkYear(checkData, wrongEntries);
+    //checkNumber(checkData, wrongEntries);
+    //checkString(checkData, wrongEntries);
 
+    //if(checkForWrongEntries(wrongEntries)){
+        sendData("PUT", "http://127.0.0.1:8080/Player", checkData);
+    //}
+
+}
+
+function sendData(method, url, data) {
+    var req = new XMLHttpRequest();
+    req.open(method, url, true);
+    //req.setRequestHeader("Content-type", "application/json");
+    req.onreadystatechange = function () {
+        if (req.readyState == 4 && req.status == 200) {
+            var json = JSON.parse(req.responseText);
+
+        }
+    };
+
+        req.send(data);
+    //window.location.href="http://127.0.0.1/Player";
 }
 
 function checkYear(player, list){
