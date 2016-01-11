@@ -1,35 +1,26 @@
-/**
- * Created by thorsten on 11.01.16.
- */
-/**
- * Created by thorsten on 11.01.16.
- */
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var server = express();
 
 
-//now you can directly access the request body as an JSON object
+//for instant use
 server.use(bodyParser.json());
-//handle the CORS access
+//server handles cors / which methods are allowed
 server.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Headers', 'content-type');
     res.header('Access-Control-Allow-Methods', 'GET, PUT');
     next();
 });
 
-server.get('/', function(req,res){
-    res.set();
-});
-
+//GET API which send full json
 server.get('/AllPlayers', function(req,res){
     res.set({'content-type': 'application/json'});
     console.log('request for Allplayers');
 
     //Read and Parse JSON File
-    fs.readFile('data.json', 'utf-8', function (err, data) {
+    fs.readFile('files/data.json', 'utf-8', function (err, data) {
         if (err) {
             console.log(err);
         } else {
@@ -38,12 +29,12 @@ server.get('/AllPlayers', function(req,res){
     });
 });
 
-
+//GET API which send the favorites in the json
 server.get('/Favorites', function(req,res){
     res.set({'content-type': 'application/json'});
     console.log('request for Favorites');
 
-    fs.readFile('data.json', 'utf-8', function (err, data) {
+    fs.readFile('files/data.json', 'utf-8', function (err, data) {
         if (err) {
             console.log(err);
         } else {
@@ -59,28 +50,26 @@ server.get('/Favorites', function(req,res){
     });
 });
 
-server.put('/player', function (req,res) {
-    console.log(req.body);
-    var bodyData = req.body;
-    fs.open('form.txt', 'a', function(err){
+//PUT API to storage a new player
+server.put('/Player', function (req,res) {
+    fs.open('files/form.txt', 'a', function(err){
         if(err){
+            res.end('cannot find file');
             console.log(err);
         } else {
-            fs.appendFile('form.txt',
-                bodyData.nachname + ' '  +  bodyData.vorname + ' '
-                +bodyData.jahr + ' '+    bodyData.headcoach + ' '
-                +bodyData.assistentcoach + ' ' + bodyData.position + ' '
-                +bodyData.number+ '\n');
+            fs.appendFile('files/form.txt',
+                req.body.nachname + ' '  +  req.body.vorname + ' '
+                +req.body.jahr + ' '+    req.body.headcoach + ' '
+                +req.body.assistentcoach + ' ' + req.body.position + ' '
+                +req.body.number+ '\n');
+
+            res.end('player stored in file');
         }
     });
-
-    //res.writeHead(200, {'Content-Type':'text/plain'});
-    res.send('hello');
 });
 
-var server = server.listen(8080, function () {
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log("Example app listening at http://%s:%s", host, port)
+//start the server
+server.listen(8080, function () {
+//    var host = '127.0.0.1';
+    console.log("Server is online");
 });

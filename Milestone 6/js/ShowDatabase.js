@@ -16,8 +16,6 @@ function init(){
     myFavorites.onclick = showFavorites;
 }
 
-
-
 function getData(url) {
     var req = new XMLHttpRequest();
     req.open("GET", url, true);
@@ -94,9 +92,7 @@ function showFavorites() {
     document.getElementById("myFavorites").className = "BlueSelected";
     document.getElementById("allPlayers").className = "NotBlueSelected";
 }
-function HidePlayers(){
+function HidePlayers() {
     var tr = document.getElementById("tableContent");
     tr.parentNode.removeChild(tr);
-}/**
- * Created by thorsten on 11.01.16.
- */
+}
