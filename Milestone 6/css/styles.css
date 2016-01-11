@@ -137,13 +137,6 @@ th,td{
     border: 2px solid black;
     text-align: center;
 }
-
-.visible{
-    visibility: visible;
-}
-.notVisible{
-    display: none;
-}
 .BlueSelected{
     color: #FFFFFF;
     background-color: rgba(0,38,255,1);
