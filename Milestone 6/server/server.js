@@ -3,6 +3,9 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var server = express();
 
+var host = '127.0.0.1';
+var port = 8080;
+
 
 //for instant use
 server.use(bodyParser.json());
@@ -14,6 +17,11 @@ server.use(function(req, res, next) {
     next();
 });
 
+server.get('/', function (req,res) {
+    console.log('< User connected to Server >');
+    res.set({'content-type': 'text/plain'});
+    res.end('Sie haben sich erfolgreich auf den WebServer mit der Url <'+ host+ ':' + port +'> verbunden');
+});
 //GET API which send full json
 server.get('/AllPlayers', function(req,res){
     res.set({'content-type': 'application/json'});
@@ -70,6 +78,6 @@ server.put('/Player', function (req,res) {
 
 //start the server
 server.listen(8080, function () {
-//    var host = '127.0.0.1';
+
     console.log("Server is online");
 });
